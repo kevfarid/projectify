@@ -2,7 +2,7 @@ import Project from './project.model'
 import { response } from '../../helpers/responses'
 
 export const getProjects = async (req, res) => {
-  const projects = await Project.find()
+  const projects = await Project.find().populate('reports')
   return response(200, 'Projects retrieved', projects, res)
 }
 

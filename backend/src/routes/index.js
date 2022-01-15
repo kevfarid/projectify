@@ -2,11 +2,13 @@ import { Router } from 'express'
 import helloWorld from '../services/helloworld/helloworld.routes'
 import auth from '../services/auth/auth.routes'
 import projects from '../services/projects/projects.routes'
+import reports from '../services/reports/reports.routes'
 
 const router = Router()
 
 router.use('/helloworld', helloWorld)
 router.use('/auth', auth)
 router.use('/projects', projects)
+router.use('/reports', reports)
 
 export default router
