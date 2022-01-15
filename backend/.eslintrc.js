@@ -22,6 +22,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'no-underscore-dangle': 'off',
   },
   ignorePatterns: ['node_modules', 'dist', 'src/tests/**'],
 }

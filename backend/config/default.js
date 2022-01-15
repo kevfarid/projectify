@@ -15,3 +15,8 @@ export const database = {
   pass: ENV.DB_PASS,
   uri: `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASS}@${ENV.DB_HOST}/${ENV.DB_NAME}?retryWrites=true&w=majority`,
 }
+
+export const auth = {
+  salt: ENV.SALT,
+  word: ENV.WORD,
+}
