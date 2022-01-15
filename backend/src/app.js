@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import express from 'express'
 import config from 'config'
 import logger from 'morgan'
@@ -5,6 +6,8 @@ import cors from 'cors'
 
 import { name } from '../package.json'
 import allRoutes from './routes'
+
+import './database/mongoose.js'
 
 const app = express()
 
