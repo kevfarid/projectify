@@ -14,6 +14,7 @@ export default defineConfig({
       Services: resolve(__dirname, './src/services'),
       Pages: resolve(__dirname, './src/pages'),
       Routes: resolve(__dirname, './src/routes'),
+      Config: resolve(__dirname, './src/config'),
     },
   },
 })

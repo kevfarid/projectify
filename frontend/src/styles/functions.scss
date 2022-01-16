@@ -8,3 +8,14 @@
   $b: calc(($b + 255) / 2);
   @return rgb($r, $g, $b);
 }
+
+
+$repeat: 30;
+
+.background-color-random {
+  @for $i from 1 through $repeat {
+    .card:nth-child(#{$i}) {
+      background-color: random-bgr();
+    }
+  }
+}

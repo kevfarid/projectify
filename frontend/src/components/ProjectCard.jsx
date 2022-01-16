@@ -1,17 +1,17 @@
-const Card = ({ data, title, description, percentage }) => {
+const ProjectCard = ({ numberReports, title, percentage }) => {
   return (
     <div className="card">
       <div className="card__info">
         <h2>{title}</h2>
-        <h3>{description}</h3>
-        <h4>{data}</h4>
+        <span>Total number of reports</span>
+        <h3>{numberReports}</h3>
       </div>
       <div className="card__percentage">
         <h2>{percentage}%</h2>
-        <p>Total developed</p>
+        <span>Total developed</span>
       </div>
     </div>
   )
 }
 
-export default Card
+export default ProjectCard

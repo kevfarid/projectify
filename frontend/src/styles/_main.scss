@@ -1,7 +1,9 @@
+@use 'colors';
+
 html, body {
   padding: 0;
   margin: 0;
-  color: rgb(29, 24, 24);
+  color: colors.$black_color;
 }
 
 body {
@@ -11,3 +13,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// .wrapper {
+//   margin: 0 30% 0;
+// }
