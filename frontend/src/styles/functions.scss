@@ -1,0 +1,10 @@
+@function random-bgr() {
+  $r: random(255);
+  $g: random(255);
+  $b: random(255);
+
+  $r: calc(($r + 255) / 2);
+  $g: calc(($g + 255) / 2);
+  $b: calc(($b + 255) / 2);
+  @return rgb($r, $g, $b);
+}

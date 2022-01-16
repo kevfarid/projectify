@@ -1,0 +1,49 @@
+@use 'functions';
+@use 'colors';
+
+.card {
+  background-color: functions.random-bgr();
+  border-radius: 2rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 3rem;
+}
+
+.card__info {
+  h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  h3 {
+    font-size: 0.8rem;
+    margin: 0;
+    color: colors.$grey_color;
+  }
+  h4 {
+    font-size: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+.card__percentage {
+  line-height: 3rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+    font-size: 2.7rem;
+    font-weight: bold;
+  }
+
+  p {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: colors.$grey_color;
+  }
+}
