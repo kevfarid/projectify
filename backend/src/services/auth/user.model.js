@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 
+const urlImgDefault = 'https://i.imgur.com/vE3gBen.png'
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -24,6 +26,11 @@ const userSchema = mongoose.Schema(
       required: true,
       minlenght: 2,
       maxlenght: 20,
+    },
+    urlImg: {
+      type: String,
+      required: false,
+      default: urlImgDefault,
     },
   },
   {

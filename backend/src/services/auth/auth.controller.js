@@ -20,11 +20,16 @@ export const signin = async (req, res) => {
 
   const token = jwt.sign({ id: user._id, email: user.email }, config.get('auth.word'))
 
-  return response(200, 'Login success', { token, id: user._id }, res)
+  return response(
+    200,
+    'Login success',
+    { token, userInfo: { urlImg: user.urlImg, name: user.name } },
+    res
+  )
 }
 
 export const signup = async (req, res) => {
-  const { name, email, password, role } = req.body
+  const { name, email, urlImg, password, role } = req.body
   const user = await User.findOne({ email })
   if (user) {
     return response(400, 'User already exists', null, res)
@@ -33,6 +38,7 @@ export const signup = async (req, res) => {
   const newUser = new User({
     name,
     email,
+    urlImg,
     password: await crypt.encrypt(password),
     role,
   })

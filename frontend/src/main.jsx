@@ -4,12 +4,15 @@ import Routes from 'Routes'
 import Layout from 'Components/Layout'
 import './styles/index.scss'
 import 'animate.css'
+import { UserContextProvider } from './context/UserContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout>
-      <Routes />
-    </Layout>
+    <UserContextProvider>
+      <Layout>
+        <Routes />
+      </Layout>
+    </UserContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

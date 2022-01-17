@@ -41,6 +41,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'react/jsx-fragments': ['error', 'element'],
     'import/no-extraneous-dependencies': 'off',
+    'consistent-return': 'off',
     'react/function-component-definition': [
       'error',
       {

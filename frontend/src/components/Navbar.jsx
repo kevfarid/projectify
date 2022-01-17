@@ -1,25 +1,25 @@
+import React from 'react'
+import useUser from 'Hooks/useUser'
+
 const Navbar = () => {
-  const name = 'Daniel'
-  return (
+  const { userInfo, isLogged } = useUser()
+  return isLogged ? (
     <header className="navbar">
       <div className="navbar__user">
         <div className="navbar__avatar">
-          <img
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
-            alt="logo"
-          />
+          <img src={userInfo.urlImg} alt="logo" />
         </div>
         <div className="navbar__greeting">
           <h1>
-            Hello,<span>{name}</span>
+            Hello, {userInfo.name && <span>{userInfo.name.split(' ')[0]}</span>}{' '}
           </h1>
         </div>
       </div>
       <div className="navbar__search">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" className="input--primary" />
       </div>
     </header>
-  )
+  ) : null
 }
 
 export default Navbar

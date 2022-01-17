@@ -1,0 +1,50 @@
+@use 'colors';
+
+.btn {
+  padding: 0.5rem;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: colors.$primary-color;
+  color: colors.$black-color;
+  &:hover {
+    background-color: colors.$secondary-color;
+  }
+}
+
+.btn--secondary {
+  background-color: colors.$secondary-color;
+  color: colors.$black-color;
+  &:hover {
+    background-color: colors.$primary-color;
+  }
+}
+
+.btn__large {
+  width: 100%;
+}
+
+.btn__outline {
+  background-color: transparent;
+  border: 1px solid colors.$primary-color;
+  color: colors.$primary-color;
+  &:hover {
+    background-color: colors.$primary-color;
+    color: colors.$black-color;
+  }
+}
+
+.btn--secondary__outline {
+  background-color: transparent;
+  border: 1px solid colors.$secondary-color;
+  color: colors.$secondary-color;
+  &:hover {
+    background-color: colors.$secondary-color;
+    color: colors.$black-color;
+  }
+}
