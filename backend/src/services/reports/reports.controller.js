@@ -19,6 +19,12 @@ const addReportToProject = async (idReport, idProject) => {
   }
 }
 
+export const getReportsById = async (req, res) => {
+  const { id } = req.params
+  const report = await Report.findById(id).populate(id, '-_id -password -role -createdAt')
+  response(200, 'Success', report, res)
+}
+
 export const createReport = async (req, res) => {
   const { by, project, title, report, progress, state, completed } = req.body
   const reportData = {

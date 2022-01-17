@@ -42,6 +42,9 @@ module.exports = {
     'react/jsx-fragments': ['error', 'element'],
     'import/no-extraneous-dependencies': 'off',
     'consistent-return': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     'react/function-component-definition': [
       'error',
       {

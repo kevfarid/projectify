@@ -16,6 +16,7 @@ export default defineConfig({
       Routes: resolve(__dirname, './src/routes'),
       Config: resolve(__dirname, './src/config'),
       Context: resolve(__dirname, './src/context'),
+      Utils: resolve(__dirname, './src/utils'),
     },
   },
 })

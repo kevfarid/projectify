@@ -1,6 +1,14 @@
-const ProjectCard = ({ numberReports, title, percentage }) => {
+import { useNavigate } from 'react-router-dom'
+
+const ProjectCard = ({ numberReports, title, percentage, id }) => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/project/${id}`)
+  }
+
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick}>
       <div className="card__info">
         <h2>{title}</h2>
         <span>Total number of reports</span>

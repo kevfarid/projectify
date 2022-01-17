@@ -3,3 +3,11 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
+
+.grid__full-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+}

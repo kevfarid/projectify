@@ -6,6 +6,20 @@ export const getProjects = async (req, res) => {
   return response(200, 'Projects retrieved', projects, res)
 }
 
+export const getProjectsById = async (req, res) => {
+  const { id } = req.params
+  const project = await Project.findById(id).populate({
+    path: 'reports',
+    select: '-_id -updatedAt -report',
+    populate: {
+      path: 'by',
+      select: '-_id -password -role -updatedAt',
+      model: 'User',
+    },
+  })
+  return response(200, 'Project retrieved', project, res)
+}
+
 export const createProject = async (req, res) => {
   const { name, start, reports, end } = req.body
   const project = new Project({ name, start, reports, end })
