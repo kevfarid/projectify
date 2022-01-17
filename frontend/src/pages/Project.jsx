@@ -22,13 +22,17 @@ const Project = () => {
 
   return (
     <div className="grid__full-center">
-      <h1 className="text--title text__no-margin__bottom">{project.name}</h1>
       {project.reports && (
-        <h2 className="text--subtitle text__no-margin">
-          {project.reports.length} reports
-        </h2>
+        <React.Fragment>
+          <h1 className="text--title text__no-margin__bottom">
+            {project.name}
+          </h1>
+          <h2 className="text--subtitle text__no-margin">
+            {project.reports.length} reports
+          </h2>
+          <ProgressBar bgcolor="#00BD9D" completed={80} />
+        </React.Fragment>
       )}
-      <ProgressBar bgcolor="#00BD9D" completed={80} />
       <ReportTable reportList={project.reports} />
     </div>
   )

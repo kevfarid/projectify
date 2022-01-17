@@ -6,12 +6,16 @@
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5;
+  animation: fadeIn;
+  animation-duration: 2s;
 }
 
 .text--title {
   font-size: 2.5rem;
   font-weight: 300;
   line-height: 1.5;
+  animation: zoomIn;
+  animation-duration: 1s;
 }
 
 .text__no-margin__bottom {
@@ -20,4 +24,8 @@
 
 .text__no-margin {
   margin: 0;
+}
+
+.text__margin-1rem {
+  margin: 1rem;
 }

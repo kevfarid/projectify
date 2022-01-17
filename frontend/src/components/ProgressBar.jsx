@@ -6,6 +6,8 @@ const ProgressBar = (props) => {
     width: '95%',
     backgroundColor: '#e0e0de',
     borderRadius: 50,
+    animation: 'zoomIn',
+    animationDuration: '1s',
   }
 
   const fillerStyles = {

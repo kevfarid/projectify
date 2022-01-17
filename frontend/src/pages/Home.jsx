@@ -29,11 +29,13 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Last Projects</h2>
+      <h2 className="text--subtitle text__margin-1rem">Last Projects</h2>
       <ProjectList projects={lastProjects} />
-      <h2>Projects for delivery</h2>
+      <h2 className="text--subtitle text__margin-1rem">
+        Projects for delivery
+      </h2>
       <ProjectList projects={projectsDelivery} />
-      <h2>All projects</h2>
+      <h2 className="text--subtitle text__margin-1rem">All projects</h2>
       <ProjectList projects={projects} />
     </div>
   )
