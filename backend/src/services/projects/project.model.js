@@ -22,6 +22,11 @@ const projectSchema = mongoose.Schema(
       type: Date,
       required: true,
     },
+    progressTotal: {
+      type: Number,
+      max: 100,
+      default: 0,
+    },
   },
   {
     timestamps: true,

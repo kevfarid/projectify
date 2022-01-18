@@ -46,6 +46,10 @@
   margin-right: 0.6rem;
 }
 
+.report__avatar--small {
+  width: 1.3rem;
+}
+
 .report__user {
   margin-right: 0.6rem;
   overflow: hidden;
@@ -77,4 +81,13 @@
 .report__status {
   padding: 0.5rem;
   text-transform: capitalize;
+}
+
+
+.form--view-report {
+  .form__input {
+    display: grid;
+    margin: 0.3rem;
+    grid-template-columns: 1fr 1fr;
+  }
 }

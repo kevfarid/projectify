@@ -1,6 +1,6 @@
-const ReportCard = ({ title, createdAt, nameUser, avatar, state }) => {
+const ReportCard = ({ title, createdAt, nameUser, avatar, state, onClick }) => {
   return (
-    <div className="report report--clickable">
+    <div className="report report--clickable" onClick={onClick}>
       <span className="report__title">{title}</span>
       <span className="report__date">{createdAt}</span>
       <div className="report__author">

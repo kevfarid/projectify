@@ -23,7 +23,7 @@ export const signin = async (req, res) => {
   return response(
     200,
     'Login success',
-    { token, userInfo: { urlImg: user.urlImg, name: user.name } },
+    { token, userInfo: { urlImg: user.urlImg, name: user.name, _id: user._id } },
     res
   )
 }

@@ -3,7 +3,7 @@ import ReportCard from 'Components/ReportCard'
 
 import sorts from 'Utils/sorts'
 
-const ReportTable = ({ reportList }) => {
+const ReportTable = ({ reportList, onClick }) => {
   return reportList ? (
     <div className="report-table">
       <div className="report text__center report--table__header">
@@ -22,6 +22,7 @@ const ReportTable = ({ reportList }) => {
             nameUser={report.by.name}
             avatar={report.by.urlImg}
             state={report.state}
+            onClick={() => onClick(report._id)}
           />
         ))}
     </div>

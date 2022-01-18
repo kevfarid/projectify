@@ -22,13 +22,13 @@ const reportSchema = new Mongoose.Schema(
       max: 100,
       required: true,
     },
+    timesEdited: {
+      type: Number,
+    },
     state: {
       type: String,
       required: true,
-    },
-    completed: {
-      type: Boolean,
-      required: true,
+      default: 'pending',
     },
   },
   {

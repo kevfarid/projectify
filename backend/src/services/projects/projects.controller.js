@@ -6,11 +6,11 @@ export const getProjects = async (req, res) => {
   return response(200, 'Projects retrieved', projects, res)
 }
 
-export const getProjectsById = async (req, res) => {
+export const getProjectById = async (req, res) => {
   const { id } = req.params
   const project = await Project.findById(id).populate({
     path: 'reports',
-    select: '-_id -updatedAt -report',
+    select: '-updatedAt -report',
     populate: {
       path: 'by',
       select: '-_id -password -role -updatedAt',
@@ -21,8 +21,8 @@ export const getProjectsById = async (req, res) => {
 }
 
 export const createProject = async (req, res) => {
-  const { name, start, reports, end } = req.body
-  const project = new Project({ name, start, reports, end })
+  const { name, start, reports, progressTotal, end } = req.body
+  const project = new Project({ name, start, reports, progressTotal, end })
   const projectSaved = await project.save()
   return response(200, 'Project created', projectSaved, res)
 }

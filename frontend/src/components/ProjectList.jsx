@@ -8,7 +8,7 @@ const ProjectList = ({ projects }) => {
           key={project._id}
           numberReports={project.reports.length}
           title={project.name}
-          percentage={80}
+          percentage={project.progressTotal}
           id={project._id}
         />
       ))}

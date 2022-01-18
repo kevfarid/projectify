@@ -7,35 +7,51 @@
   font-size: 1rem;
   outline: none;
   cursor: pointer;
+  &:hover {
+    filter: brightness(1.05);
+  }
 }
 
 .btn--primary {
   background-color: colors.$primary-color;
+  border: 1px solid colors.$primary-color;
   color: colors.$black-color;
-  &:hover {
-    background-color: colors.$secondary-color;
-  }
+
 }
 
 .btn--secondary {
   background-color: colors.$secondary-color;
+  border: 1px solid colors.$secondary-color;
   color: colors.$black-color;
-  &:hover {
-    background-color: colors.$primary-color;
-  }
 }
 
 .btn__large {
   width: 100%;
 }
 
+.btn__alert {
+  background-color: colors.$warning-color;
+  border: 1px solid colors.$warning-color;
+}
+
+.btn__danger {
+  background-color: colors.$error-color;
+  border: 1px solid colors.$error-color;
+}
+
 .btn__outline {
   background-color: transparent;
-  border: 1px solid colors.$primary-color;
   color: colors.$primary-color;
   &:hover {
     background-color: colors.$primary-color;
     color: colors.$black-color;
+  }
+}
+
+.btn__danger {
+  color: colors.$error-color;
+  &:hover {
+    background-color: colors.$error-color;
   }
 }
 
@@ -47,4 +63,13 @@
     background-color: colors.$secondary-color;
     color: colors.$black-color;
   }
+}
+
+.btn__group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  overflow: hidden;
 }
