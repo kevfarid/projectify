@@ -35,7 +35,7 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
           ...report,
           project: idProject,
         }).catch((err) => {
-          setError(err.response.data.data)
+          setError(err.response.data.message)
         })
 
         if (newData) {
@@ -44,7 +44,7 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
         }
       } else if (newMode && !inputsDisabled) {
         const newData = await addReport(report).catch((err) => {
-          setError(err.response.data.data)
+          setError(err.response.data.message)
         })
 
         if (newData) {

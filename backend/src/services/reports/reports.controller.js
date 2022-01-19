@@ -5,6 +5,8 @@ import Project from '../projects/project.model'
 
 import { response } from '../../helpers/responses'
 
+import validate from './reports.validator'
+
 export const getReports = async (_, res) => {
   const reports = await Report.find().populate('by', '-_id -password -role -createdAt -updatedAt')
   response(200, 'Success', reports, res)
@@ -96,6 +98,11 @@ export const getReportById = async (req, res) => {
 }
 
 export const createReport = async (req, res) => {
+  const { error } = validate(req.body)
+  if (error) {
+    return response(400, error.details[0].message, null, res)
+  }
+
   const { by, project, title, report, progress, state } = req.body
   const reportData = {
     by,
@@ -109,12 +116,12 @@ export const createReport = async (req, res) => {
 
   const idProject = await addReportToProject(newReport._id, project)
   if (!idProject) {
-    return response(400, 'Error', 'Error creating report, not found project', res)
+    return response(400, 'Error creating report, not found project', null, res)
   }
 
   const progressTotalMessage = await sumToProgressTotal(project, progress, null)
   if (progressTotalMessage.includes('Error')) {
-    return response(400, 'Error', progressTotalMessage, res)
+    return response(400, progressTotalMessage, null, res)
   }
 
   await newReport.save()
@@ -122,6 +129,11 @@ export const createReport = async (req, res) => {
 }
 
 export const updateReport = async (req, res) => {
+  const { error } = validate(req.body)
+  if (error) {
+    return response(400, error.details[0].message, null, res)
+  }
+
   const { id } = req.params
   const { title, report, progress, state, project } = req.body
   const reportData = {
@@ -134,12 +146,12 @@ export const updateReport = async (req, res) => {
   const isEditable = await reportIsEditable(id)
 
   if (!isEditable) {
-    return response(400, 'Error', 'You are not allowed to edit this report', res)
+    return response(400, 'You are not allowed to edit this report', null, res)
   }
 
   const progressTotalMessage = await sumToProgressTotal(project, progress, id)
   if (progressTotalMessage.includes('Error')) {
-    return response(400, 'Error', progressTotalMessage, res)
+    return response(400, progressTotalMessage, null, res)
   }
 
   const updatedReport = await Report.findByIdAndUpdate(

@@ -4,6 +4,7 @@ import config from 'config'
 import { response } from '../../helpers/responses'
 import crypt from './libs/crypt'
 import User from './user.model'
+import { validateRegister } from './auth.validator'
 
 export const signin = async (req, res) => {
   const { email, password } = req.body
@@ -29,10 +30,18 @@ export const signin = async (req, res) => {
 }
 
 export const signup = async (req, res) => {
-  const { name, email, urlImg, password, role } = req.body
+  const { error } = validateRegister(req.body)
+  if (error) {
+    return response(400, error.details[0].message, null, res)
+  }
+
+  const { name, urlImg, password, role } = req.body
+
+  let email = `${name.split(' ').join('.').toLowerCase()}@projectify.com`
+
   const user = await User.findOne({ email })
   if (user) {
-    return response(400, 'User already exists', null, res)
+    email = `${email.split('@projectify.com')[0]}${Math.floor(Math.random() * 100)}@projectify.com`
   }
 
   const newUser = new User({
