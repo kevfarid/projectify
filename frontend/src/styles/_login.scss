@@ -1,7 +1,32 @@
+@use 'colors';
+
 .login{
-  width: 270px;
+  width: 16.875rem;
 
   .input--primary{
     margin-bottom: 1rem;
   }
+
+  position: absolute;
+  top: calc((100vh - 30rem) / 2);
+  left: calc((100vw - 16.875rem) / 2);
+}
+
+.login--logo{
+  margin-bottom: 1rem;
+  img {
+    width: 50%;
+    margin: 0;
+  }
+
+  h1 {
+    color: colors.$primary-color;
+    margin: 0;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: #616161
+  }
+
 }

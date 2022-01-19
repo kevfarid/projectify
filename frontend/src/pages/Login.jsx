@@ -32,10 +32,15 @@ const Login = () => {
 
   return (
     <div className="login text__center">
+      <div className="login--logo">
+        <img src="logo.png" alt="logo" />
+        <h1>Projectify</h1>
+        <span>working Faster</span>
+      </div>
       {isLoginLoading && <p>Loading...</p>}
       {!isLoginLoading && (
         <React.Fragment>
-          <h1>Welcome</h1>
+          <h2>Welcome</h2>
           <form onSubmit={handleSubmit} className="form">
             <div className="form__group">
               <input

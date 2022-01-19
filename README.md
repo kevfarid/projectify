@@ -1,4 +1,4 @@
-# View Projects
+# Projectify - Working Faster
 
 You see your projects and the progress of each one
 

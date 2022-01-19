@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { getProjects } from 'Services/projects'
 import ProjectList from 'Components/ProjectList'
 
@@ -28,7 +28,7 @@ const Home = () => {
   }, [fetchProjects])
 
   return (
-    <div>
+    <React.Fragment>
       <h2 className="text--subtitle text__margin-1rem">Last Projects</h2>
       <ProjectList projects={lastProjects} />
       <h2 className="text--subtitle text__margin-1rem">
@@ -37,7 +37,7 @@ const Home = () => {
       <ProjectList projects={projectsDelivery} />
       <h2 className="text--subtitle text__margin-1rem">All projects</h2>
       <ProjectList projects={projects} />
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-core",
+  "name": "projectify-backend",
   "version": "1.0.0",
   "description": "nodejs config template",
   "main": "index.js",

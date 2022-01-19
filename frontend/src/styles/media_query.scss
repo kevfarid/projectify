@@ -1,0 +1,14 @@
+@media (max-width: 594px) {
+  .grid__two-columns {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}

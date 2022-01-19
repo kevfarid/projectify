@@ -48,10 +48,24 @@
   }
 }
 
+.btn__text{
+  background-color: transparent;
+  border: 0;
+  color: colors.$primary-color;
+}
+
 .btn__danger {
   color: colors.$error-color;
   &:hover {
     background-color: colors.$error-color;
+  }
+}
+
+.btn__text {
+  &:hover {
+    background-color: transparent;
+    color: colors.$black-color;
+    text-decoration: underline;
   }
 }
 

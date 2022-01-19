@@ -2,7 +2,7 @@ import React from 'react'
 import useUser from 'Hooks/useUser'
 
 const Navbar = () => {
-  const { userInfo, isLogged } = useUser()
+  const { userInfo, isLogged, logout } = useUser()
   return isLogged ? (
     <header className="navbar">
       <div className="navbar__user">
@@ -15,8 +15,15 @@ const Navbar = () => {
           </h1>
         </div>
       </div>
-      <div className="navbar__search">
-        <input type="text" placeholder="Search" className="input--primary" />
+      <div className="navbar__menu">
+        <a href="/">Home</a>
+        <button
+          className="btn btn__text btn__danger"
+          type="button"
+          onClick={logout}
+        >
+          logout
+        </button>
       </div>
     </header>
   ) : null
