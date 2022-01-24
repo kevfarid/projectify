@@ -109,7 +109,7 @@ export const createReport = async (req, res) => {
     title,
     report,
     progress,
-    state,
+    state: state || 'pending',
     timesEdited: 0,
   }
   const newReport = new Report(reportData)

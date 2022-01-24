@@ -31,6 +31,7 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
       e.preventDefault()
 
       if (editMode && !inputsDisabled) {
+        setIsLoading(true)
         const newData = await updateReport(idReport, {
           ...report,
           project: idProject,
@@ -41,8 +42,11 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
         if (newData) {
           setReport(newData)
           setError(null)
+          setIsLoading(false)
+          onClose()
         }
       } else if (newMode && !inputsDisabled) {
+        setIsLoading(true)
         const newData = await addReport(report).catch((err) => {
           setError(err.response.data.message)
         })
@@ -50,6 +54,8 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
         if (newData) {
           setReport(newData)
           setError(null)
+          setIsLoading(false)
+          onClose()
         }
       }
 
@@ -61,7 +67,16 @@ const ViewReport = ({ idReport, idProject, onClose }) => {
         setIsLoading(false)
       }
     },
-    [editMode, error, idProject, idReport, inputsDisabled, newMode, report]
+    [
+      editMode,
+      error,
+      idProject,
+      idReport,
+      inputsDisabled,
+      newMode,
+      onClose,
+      report,
+    ]
   )
 
   const handleOnChange = (e) => {

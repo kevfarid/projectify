@@ -7,7 +7,7 @@ const reportSchema = joi.object({
   report: joi.string().required(),
   progress: joi.number().min(0).max(100).required(),
   timesEdited: joi.number().default(0),
-  state: joi.string().required().default('pending'),
+  state: joi.string(),
 })
 
 const validate = (report) => {
